@@ -9,6 +9,12 @@ mod prelude {
 
 use prelude::*;
 
+#[derive(Copy, Clone, PartialEq)]
+pub enum TileType {
+    Wall,
+    Floor,
+}
+
 struct State {}
 
 impl State {
