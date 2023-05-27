@@ -15,18 +15,20 @@ pub enum TileType {
     Floor,
 }
 
-struct State {}
+struct State {
+    map: Map,
+}
 
 impl State {
     fn new() -> Self {
-        State {}
+        State { map: Map::new() }
     }
 }
 
 impl GameState for State {
     fn tick(&mut self, ctx: &mut BTerm) {
         ctx.cls();
-        ctx.print(1, 1, "Hello, Bracket Terminal!");
+        self.map.render(ctx);
     }
 }
 
