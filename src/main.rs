@@ -35,6 +35,7 @@ impl GameState for State {
 fn main() -> BError {
     let context = BTermBuilder::simple80x50()
         .with_title("Dungeon Crawl")
+        .with_fps_cap(30.0)
         .build()?;
     main_loop(context, State::new())
 }
