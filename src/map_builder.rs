@@ -46,4 +46,13 @@ impl MapBuilder {
             }
         }
     }
+
+    fn apply_horizontal_tunnel(&mut self, x1: i32, x2: i32, y: i32) {
+        use std::cmp::{max, min};
+        for x in min(x1, x2)..=max(x1, x2) {
+            if let Some(idx) = self.map.try_idx(Point::new(x, y)) {
+                self.map.tiles[idx as usize] = TileType::Floor;
+            }
+        }
+    }
 }
