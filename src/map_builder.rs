@@ -55,4 +55,8 @@ impl MapBuilder {
             }
         }
     }
+
+    fn build_corridors(&mut self, rng: &mut RandomNumberGenerator) {
+        let mut rooms = self.rooms.clone();
+    }
 }
