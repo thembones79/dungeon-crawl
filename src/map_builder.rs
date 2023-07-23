@@ -38,6 +38,8 @@ impl MapBuilder {
         }
     }
 
+    println!("ssss");
+
     fn apply_vertical_tunnnel(&mut self, y1: i32, y2: i32, x: i32) {
         use std::cmp::{max, min};
         for y in min(y1, y2)..=max(y1, y2) {
