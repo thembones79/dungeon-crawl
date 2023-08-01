@@ -38,7 +38,6 @@ impl MapBuilder {
         }
     }
 
-    println!("ssss");
 
     fn apply_vertical_tunnnel(&mut self, y1: i32, y2: i32, x: i32) {
         use std::cmp::{max, min};
@@ -60,5 +59,6 @@ impl MapBuilder {
 
     fn build_corridors(&mut self, rng: &mut RandomNumberGenerator) {
         let mut rooms = self.rooms.clone();
+        rooms.sort_by(|a,b| a.center().x.cmp(&b.center().x));
     }
 }
