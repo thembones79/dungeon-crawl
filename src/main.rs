@@ -27,7 +27,7 @@ struct State {
 impl State {
     fn new() -> Self {
         let mut rng = RandomNubrtGenerator::new();
-        let map_builder = MapBuilder::naw(&mut rng);
+        let map_builder = MapBuilder::new(&mut rng);
         Self {
             map: map_builder.map,
             player: Player::new(map_builder.player_start),
