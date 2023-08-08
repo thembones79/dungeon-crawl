@@ -18,7 +18,7 @@ impl MapBuilder {
         mb.fill(TileType::Wall);
         mb.build_random_rooms(rng);
         mb.build_corridors(rng);
-        mp.player_start = mb.rooms[0].center();
+        mb.player_start = mb.rooms[0].center();
         mb
     }
 
@@ -52,7 +52,7 @@ impl MapBuilder {
         }
     }
 
-    fn apply_vertical_tunnnel(&mut self, y1: i32, y2: i32, x: i32) {
+    fn apply_vertical_tunnel(&mut self, y1: i32, y2: i32, x: i32) {
         use std::cmp::{max, min};
         for y in min(y1, y2)..=max(y1, y2) {
             if let Some(idx) = self.map.try_idx(Point::new(x, y)) {

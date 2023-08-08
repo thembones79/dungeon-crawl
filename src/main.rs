@@ -26,7 +26,7 @@ struct State {
 
 impl State {
     fn new() -> Self {
-        let mut rng = RandomNubrtGenerator::new();
+        let mut rng = RandomNumberGenerator::new();
         let map_builder = MapBuilder::new(&mut rng);
         Self {
             map: map_builder.map,
